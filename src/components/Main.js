@@ -1,43 +1,47 @@
 import React from "react";
 // import { NavLink } from "react-router-dom";
-import Navbar from "./Navbar";
+import Search from "./Searchbar";
 import { NavLink } from "react-router-dom";
 import ListedCities from "./ListedCities";
 
 class Main extends React.Component {
   state = {
-    userID: this.props.loggedInUser._id
+    userID: this.props.loggedInUser
   };
 
+  setUserId = async () => {
+    this.setState({
+      userID: this.props.loggedInUser._id
+    })
+  }
+
+  goBack = (e) => {
+    const { history, loggedInUser } = this.props
+    history.push(`/${loggedInUser.username}`)
+  }
 
   render() {
     const { userID } = this.state
     const { loggedInUser } = this.props
-    return userID ? (
-      <>
-      <h4>Logged-in as: {loggedInUser.screenname}</h4>
-      <Navbar userID={userID} />
-      <ListedCities userID={userID} />
-      </>
-    ) : ( 
-      <>
-      <ul>
-        <li>
-          <NavLink activeStyle={{ color: "red" }} exact to="/signup">
-            Signup
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeStyle={{ color: "red" }} exact to="/login">
-            Login
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact to="/">Home</NavLink>
-        </li>
-      </ul>
-      </>
+    return loggedInUser && (
+      <div className="main-layout">
+        <h4>MAIN PAGE</h4>
+        <h5>👤 : @{loggedInUser.username}</h5>
+        <h5>📍 : {loggedInUser.base}</h5>
 
+
+        <Search userID={loggedInUser._id} loggedInUser={loggedInUser} />
+        <ListedCities />
+        <footer className="footer-buttons">
+        <NavLink to="/mycontacts">
+          <button>contacts</button>
+        </NavLink>
+        <NavLink to="/editprofile">
+          <button>edit</button>
+        </NavLink>
+        </footer>
+
+      </div>
     )
   }
 }

@@ -20,35 +20,35 @@ class Login extends React.Component {
     const response = await login(username, password);
     setCurrentUser(response.data);
     console.log("logged in");
-    history.push(`/listedcities/`);
+    history.push(`/${username}`);
   };
 
   render() {
     const { username, password } = this.state;
     return (
-      <>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Phone Number:</label>
+      <div className="form-layout">
+        <form onSubmit={this.handleFormSubmit} className="forms">
           <input
+            placeholder="username"
             type="text"
             name="username"
             value={username}
             onChange={this.handleChange}
           />
-          <label>Password:</label>
           <input
+            placeholder="password"
             type="password"
             name="password"
             value={password}
             onChange={this.handleChange}
           />
-          <button>Login</button>
+          <button className="form-btn">Login</button>
         </form>
         <p>
           Don't have an account?
           <NavLink to="/signup"> Signup</NavLink>
         </p>
-      </>
+      </div>
     );
   }
 }

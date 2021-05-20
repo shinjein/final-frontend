@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { logout } from "../api";
-import Search from "./Searchbar";
+// import Search from "./Searchbar";
 
 
 function Navbar({ loggedInUser, setCurrentUser }){  
@@ -10,16 +10,18 @@ function Navbar({ loggedInUser, setCurrentUser }){
     await logout();
     setCurrentUser(null);
   };
+
     return loggedInUser ? (
-      <>
+      <div className="loggedin-navbar">
         <NavLink to="/">
-          <button onClick={logoutUser}>Logout</button>
+          <button onClick={logoutUser} className="logout-btn">
+            Logout
+          </button>
         </NavLink>
-       <Search userID={loggedInUser._id} />
-      </>
+       {/* <Search userID={loggedInUser._id} loggedInUser={loggedInUser} /> */}
+      </div>
     ) : (
-      <>
-      <p>not logged in</p>
+      <div className="loggedout-navbar">
       <ul>
         <li>
           <NavLink activeStyle={{ color: "red" }} exact to="/signup">
@@ -32,7 +34,7 @@ function Navbar({ loggedInUser, setCurrentUser }){
           </NavLink>
         </li>
       </ul>
-      </>
+      </div>
   );
 }
 

@@ -5,9 +5,8 @@ import { signup } from "../api";
 class Signup extends React.Component {
   state = {
     username: "",
-    screenname: "",
-    email: "",
     password: "",
+    email:"",
     base: ""
   };
 
@@ -18,58 +17,53 @@ class Signup extends React.Component {
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
-    const { username, screenname, email, password, base } = this.state;
-    await signup( username, screenname, email, password, base);
+    const { username, password, email, base } = this.state;
+    await signup( username, password, email, base);
     this.props.history.push("/login");
   };
 
   render() {
-    const { username, screenname, email, password, base } = this.state;
+    const { username, password, email, base } = this.state;
     return (
-      <>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Phone Number:</label>
+      <div className="form-div">
+        <form onSubmit={this.handleFormSubmit} className="forms">
           <input
+            placeholder="username"
             type="text"
             name="username"
             value={username}
             onChange={this.handleChange}
           />
-          <label>Screen Name:</label>
           <input
-            type="text"
-            name="screenname"
-            value={screenname}
-            onChange={this.handleChange}
-          />
-          <label>Email:</label>
-          <input
+            placeholder="e-mail"
             type="email"
             name="email"
             value={email}
             onChange={this.handleChange}
           />
-          <label>Password:</label>
           <input
+            placeholder="password"
             type="password"
             name="password"
             value={password}
             onChange={this.handleChange}
           />
-          <label>Base City:</label>
           <input
+          placeholder="base city"
             type="text"
             name="base"
             value={base}
             onChange={this.handleChange}
           />
-          <button>Signup</button>
-        </form>
+          <button className="signup-btn">Signup</button>
+        <p>*you can only change your base city, choose username and email wisely.</p>
+
         <p>
           Already have account?
           <NavLink to="/login"> Login</NavLink>
         </p>
-      </>
+        </form>
+      </div>
     );
   }
 }

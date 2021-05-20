@@ -1,14 +1,14 @@
 import React from 'react';
 import SearchBar from 'material-ui-search-bar';
 import Script from 'react-load-script';
-import { searchedCities } from "../api"
+import { searchedCities, createcitylist } from "../api"
 import { withRouter } from "react-router-dom"
 
 class Search extends React.Component {
   state = {
-    userID: this.props.loggedInUser,
     city: "",
-    query: ""
+    query: "",
+    user: this.props.userID
   };
 
   handleScriptLoad = () => { 
@@ -32,6 +32,7 @@ class Search extends React.Component {
         {
           city: address[0].long_name,
           query: addressObject.formatted_address,
+          loggedInUser: this.props.loggedInUser._id
         }
       );
     }
@@ -39,31 +40,34 @@ class Search extends React.Component {
   
   handleFormSubmit = async (event) => {
     event.preventDefault()
-    const { city, userID } = this.state;
-    const { history } = this.props
+    const { city, user} = this.state;
+    const { history, userID } = this.props
+    await createcitylist(city, userID);
     await searchedCities(city, userID);
-    history.push(`/listedcities/${userID}`);
-    console.log(`${city} added to user's city search list`);
+    history.push(`/c/${city}`);
+    console.log(`${city} added to ${user}'s city search list`);
   }
 
   render() {
 
     return (
-      <div>
+      <div className="search-bar">
         <Script 
         url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM9W3PuAbtNUZMy_D1J2BDxrZXXON_sCc&libraries=places"          
         onLoad={this.handleScriptLoad}        
-        />        
-        <SearchBar id="autocomplete" placeholder="" hintText="Search City" value={this.state.query}
+        />
+      <div className="search-bar">
+        <SearchBar  id="autocomplete" placeholder="search city" hintText="Search City" value={this.state.query}
           style={{
             margin: '0 auto',
             maxWidth: '300px',
+            maxHeight: '35px',
           }}
           user={this.state.userID}/>
         <form onSubmit={this.handleFormSubmit} >
           <button>Submit</button>
         </form>
-
+      </div>
       </div>
     )
   }
