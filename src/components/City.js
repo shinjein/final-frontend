@@ -8,7 +8,6 @@
 
 import React from "react";
 import { citycontacts } from "../api"
-// import CityContacts from "./CityContacts"
 import { NavLink } from "react-router-dom";
 
 class City extends React.Component {
@@ -20,7 +19,7 @@ class City extends React.Component {
 
   async componentDidMount() {
     const contacts = await citycontacts(this.state.city)
-    console.log(contacts.data)
+    console.log("contacts data", contacts.data)
     this.setState({
       contacts: contacts.data
     })

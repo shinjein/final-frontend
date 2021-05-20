@@ -2,11 +2,12 @@ import "./App.css";
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar"
-import { deleteCity, loggedin } from "./api";
+import { loggedin } from "./api";
 // import { getAllCities } from "./api";
 import Main from "./components/Main"; //city search, city list, contact, user profile
 import MyContacts from "./components/MyContacts"; // contacts page
 import City from "./components/City";
+import CityConnections from "./components/CityConnections";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import EditProfile from "./components/EditProfile";
@@ -66,7 +67,7 @@ class App extends React.Component {
                 loggedInUser={loggedInUser}/>
             }}/>
           <Route exact path="/c/:city/:contact" render={(props) => {
-              return <City {...props}  
+              return <CityConnections {...props}  
                 loggedInUser={loggedInUser}/>
             }}/>
           <Route exact path="/addcontact" render={(props) => {
