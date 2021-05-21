@@ -29,7 +29,11 @@ class CityConnections extends React.Component {
           <ul>
        {this.state.connections.map((user, index) => {
           return (
-            <NavLink exact to={`/profile/${contact}`}>
+            <NavLink exact to={`/profile/${contact}`}
+            style={{
+              fontSize:"25px",
+              textDecoration: "none"
+            }}>
               <li key={index}>{user}</li>
             </NavLink>
               )
