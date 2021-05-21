@@ -38,6 +38,7 @@ class AddContact extends React.Component {
     const { contact } = this.state;
     return (
       <>
+      <h2>Add Contact</h2>
       <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
         <input
           placeholder="Contact's Username"

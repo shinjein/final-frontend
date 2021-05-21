@@ -1,6 +1,10 @@
 import React from "react";
+import Marquee from "./Marquee";
 import { NavLink } from "react-router-dom";
 import { logout } from "../api";
+import imgLogout from "../logout2.png";
+import imgContacts from "../contacts.png";
+import pagerLogo from "../pagerlogo.png";
 // import Search from "./Searchbar";
 
 
@@ -13,27 +17,59 @@ function Navbar({ loggedInUser, setCurrentUser }){
 
     return loggedInUser ? (
       <div className="loggedin-navbar">
-        <NavLink to="/">
+      <section className="nav-bar-user">
+        <p className="p-user">@  &nbsp;{loggedInUser.username}&nbsp;</p>
+        <p className="p-user">☖&nbsp;&nbsp;{loggedInUser.base}</p>
+      </section>
+      <section className="navbar-links">
+        <NavLink to="/mycontacts" 
+          activeStyle={{color: "orange"}}>
+             <img src={imgContacts} alt="contax"
+             className="img-contacts"
+             style={{
+               maxWidth:"35px"
+             }} /> 
+        </NavLink>
+        <NavLink to="/" >
           <button onClick={logoutUser} className="logout-btn">
-            Logout
+             <img src={imgLogout} alt="logout" style={{
+               maxWidth:"35px",
+               padding: "0px",
+             }}/>
           </button>
         </NavLink>
-       {/* <Search userID={loggedInUser._id} loggedInUser={loggedInUser} /> */}
+      </section>
       </div>
     ) : (
-      <div className="loggedout-navbar">
-      <ul>
-        <li>
-          <NavLink activeStyle={{ color: "red" }} exact to="/signup">
-            Signup
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeStyle={{ color: "red" }} exact to="/login">
-            Login
-          </NavLink>
-        </li>
-      </ul>
+    <div>
+          <Marquee />
+        <div className="loggedout-navbar">
+            <NavLink 
+            className="logged-out-link" 
+            style={{
+              textDecoration:"none"
+            }}
+              exact to="/signup">
+              <p className="logsign-txt">signup</p>
+            </NavLink>
+
+        <img src={pagerLogo}
+            alt="pager-logo"
+            style={{
+              maxWidth: "100px",
+              margin: "auto"
+            }}/>
+
+            <NavLink 
+              className="logged-out-link" 
+              style={{
+              textDecoration:"none",
+            }}
+              exact to="/login">
+              <p className="logsign-txt">login</p>
+
+            </NavLink>
+        </div>
       </div>
   );
 }

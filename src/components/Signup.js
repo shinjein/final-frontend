@@ -1,4 +1,5 @@
 import React from "react";
+import imgLogin from "../login.png";
 import { NavLink } from "react-router-dom";
 import { signup } from "../api";
 
@@ -55,13 +56,13 @@ class Signup extends React.Component {
             value={base}
             onChange={this.handleChange}
           />
-          <button className="signup-btn">Signup</button>
-        <p>*you can only change your base city, choose username and email wisely.</p>
-
-        <p>
-          Already have account?
-          <NavLink to="/login"> Login</NavLink>
-        </p>
+          <button className="signup-btn">
+            <img src={imgLogin} 
+            alt="signup-btn"
+            style={{
+              maxWidth: "30px"
+            }}/>
+          </button>
         </form>
       </div>
     );

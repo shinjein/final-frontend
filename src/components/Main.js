@@ -25,21 +25,14 @@ class Main extends React.Component {
     const { loggedInUser } = this.props
     return loggedInUser && (
       <div className="main-layout">
-        <h4>MAIN PAGE</h4>
-        <h5>👤 : @{loggedInUser.username}</h5>
-        <h5>📍 : {loggedInUser.base}</h5>
-
-
-        <Search userID={loggedInUser._id} loggedInUser={loggedInUser} />
+        <Search 
+        userID={loggedInUser._id} 
+        loggedInUser={loggedInUser}
+        className="searchbar" />
         <ListedCities />
-        <footer className="footer-buttons">
-        <NavLink to="/mycontacts">
-          <button>contacts</button>
-        </NavLink>
         <NavLink to="/editprofile">
           <button>edit</button>
         </NavLink>
-        </footer>
 
       </div>
     )

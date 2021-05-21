@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { login } from "../api";
+import imgLogin from "../login.png";
+
 
 class Login extends React.Component {
   state = {
@@ -27,7 +29,8 @@ class Login extends React.Component {
     const { username, password } = this.state;
     return (
       <div className="form-layout">
-        <form onSubmit={this.handleFormSubmit} className="forms">
+        <form onSubmit={this.handleFormSubmit} 
+        className="forms">
           <input
             placeholder="username"
             type="text"
@@ -42,12 +45,18 @@ class Login extends React.Component {
             value={password}
             onChange={this.handleChange}
           />
-          <button className="form-btn">Login</button>
+          <button className="form-btn"
+          style={{
+            backgroundColor:"white",
+            border:"none"
+          }}>
+                  <img src={imgLogin} 
+                  alt="logout"
+                  style={{
+                    maxWidth:"30px"
+                  }}/>
+          </button>
         </form>
-        <p>
-          Don't have an account?
-          <NavLink to="/signup"> Signup</NavLink>
-        </p>
       </div>
     );
   }

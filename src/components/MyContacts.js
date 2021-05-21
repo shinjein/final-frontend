@@ -4,6 +4,8 @@
 import React from "react";
 import { mycontacts} from "../api";
 import { NavLink } from "react-router-dom";
+import imgAddContact from "../addcontact.png";
+import imgBackBtn from "../goback.png";
 
 class MyContacts extends React.Component {
   state = {
@@ -29,18 +31,36 @@ class MyContacts extends React.Component {
   }
   render() {
     return(
-      <>
-      <h4>list my contacts</h4>
-        <ul>
+    <>
+    <div className="main-layout">
+      <h2>Contacts</h2>
+      <hr />
+      <ul>
        {this.state.contacts.map((contact, index) => {
          return (
-           <li key={index}>{contact.username}</li>
+           <li key={index}>@ {contact.username}</li>
            )
           })} 
       </ul>
-      <NavLink exact to="/addcontact">add contact</NavLink>
-      <button onClick={this.goBack}>Back to Main</button>
-      </>
+    <div className="footer-btn-bar">
+    <section>
+      <NavLink exact to="/addcontact">
+        <img src={imgAddContact} alt="add"
+        style={{
+          maxWidth: "35px"
+        }} />
+        </NavLink>
+      </section>
+    <section>
+      <button className="back-btn" onClick={this.goBack}> 
+        <img src={imgBackBtn} alt="back-btn" style={{
+        maxWidth: "35px"
+      }} />
+       </button>
+    </section>
+    </div>
+    </div>
+  </>
     )
   }
 }

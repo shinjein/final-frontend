@@ -11,10 +11,9 @@ class CityConnections extends React.Component {
   };
 
   async componentDidMount() {
-    const { contact, city } = this.state 
-    const getConnections = await connections(contact, city)
+    const getConnections = await connections(this.state.city, this.state.contact)
     this.setState({
-      contacts: getConnections.data
+      connections: getConnections.data
     })
   }
 
@@ -23,10 +22,9 @@ class CityConnections extends React.Component {
     const { city, connections, contact } = this.state
     return (
       <div className="main-layout">
-        <h5>👤 : @{loggedInUser.username}</h5>
-        <h5>📍 : {loggedInUser.base}</h5>
-        <h4>{contact}</h4>
-        <h4>{city}</h4>
+        <h2>{city}</h2>
+        <hr/>
+        <h3> &nbsp;>>>{contact}</h3>
         <section>
           <ul>
        {this.state.connections.map((user, index) => {

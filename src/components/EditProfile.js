@@ -12,8 +12,7 @@ class EditProfile extends React.Component {
     const { loggedInUser } = this.props
     return loggedInUser && (
       <div className="main-layout">
-        <h4>Edit Profile</h4>
-        <p>*you can only change your base city</p>
+        <h2>Edit Profile</h2>
           <h5>👤 : @{loggedInUser.username}</h5> 
           <h5>📍 : {loggedInUser.base}</h5>
           <h5>📪 : {loggedInUser.email}</h5>
@@ -29,15 +28,10 @@ class EditProfile extends React.Component {
 
       </form>
         <footer className="footer-buttons">
-        <NavLink to="/mycontacts">
-          <button>contacts</button>
-        </NavLink>
         <NavLink to="/editprofile">
           <button>edit</button>
         </NavLink>
-        <NavLink to="/editprofile">
-      <button onClick={this.goBack}>Back to Main</button>
-        </NavLink>
+      <button onClick={this.goBack}> back </button>
         </footer>
 
       </div>

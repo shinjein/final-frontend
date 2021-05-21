@@ -9,6 +9,7 @@
 import React from "react";
 import { citycontacts } from "../api"
 import { NavLink } from "react-router-dom";
+import Search from "./Searchbar";
 
 class City extends React.Component {
   state = {
@@ -18,10 +19,14 @@ class City extends React.Component {
   };
 
   async componentDidMount() {
-    const contacts = await citycontacts(this.state.city)
-    console.log("contacts data", contacts.data)
+    const contactsArr = await citycontacts(this.state.city)
+const contacts = contactsArr.data.filter((thing, index, self) =>
+  index === self.findIndex((t) => (
+    t === thing
+  ))
+)
     this.setState({
-      contacts: contacts.data
+      contacts: contacts
     })
   }
   
@@ -35,19 +40,24 @@ class City extends React.Component {
     const { city } = this.state
     return(
       <>
-        <h5>👤 : @{loggedInUser.username}</h5>
-        <h5>📍 : {loggedInUser.base}</h5>
-        <h4>{this.state.city} </h4>
-        ___
+      <Search />
+        <h2>{this.state.city} >></h2>
+        <hr />
         <ul>
-       {this.state.contacts.map((contact, index) => {
+     {this.state.contacts.map((contact, index) => {
           return (
-            <NavLink exact to={`/c/${city}/${contact}`}>
-              <li key={index}>{contact}</li>
+            <NavLink exact to={`/c/${city}/${contact}`}
+              style={{
+              fontSize:"25px",
+              textDecoration: "none"
+            
+            }}>
+              <li key={index}>@ {contact}</li>
             </NavLink>
           )
-      })} 
+      })}  
       </ul>
+      <hr />
       <button onClick={this.goBack}>go back</button>
       </>
     )

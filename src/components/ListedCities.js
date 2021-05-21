@@ -16,6 +16,7 @@ class ListedCities extends React.Component {
     })
   }
 
+
   componentDidMount() {
     this.listUserCities();
   }
@@ -23,12 +24,20 @@ class ListedCities extends React.Component {
   render() {
     return(
       <>
-      <div className="listed-cities">
-        <h5>Cities</h5>
+      <div className="main-layout">
+        <h2>Cities >></h2>
+        <hr/>
         <ul>
        {this.state.cities.map((city, index) => {
           return (
-            <NavLink exact to={`/c/${city}`}>
+            <NavLink exact to={`/c/${city}`}
+            style={{
+              fontSize:"25px",
+              textDecoration: "none"
+            }}
+            activeStyle={{
+
+            }}>
               <li key={index}>{city}</li>
             </NavLink>
           )

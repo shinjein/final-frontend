@@ -59,9 +59,9 @@ class Search extends React.Component {
       <div className="search-bar">
         <SearchBar  id="autocomplete" placeholder="search city" hintText="Search City" value={this.state.query}
           style={{
-            margin: '0 auto',
-            maxWidth: '300px',
-            maxHeight: '35px',
+            margin: '0.5rem',
+            width: '300px',
+            maxHeight: '45px',
           }}
           user={this.state.userID}/>
         <form onSubmit={this.handleFormSubmit} >
