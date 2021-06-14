@@ -20,16 +20,18 @@ class City extends React.Component {
 
   async componentDidMount() {
     const contactsArr = await citycontacts(this.state.city)
-const contacts = contactsArr.data.filter((thing, index, self) =>
-  index === self.findIndex((t) => (
-    t === thing
-  ))
-)
+    const contacts = contactsArr.data.filter((thing, index, self) =>
+      index === self.findIndex((t) => (
+        t === thing
+      )))
     this.setState({
       contacts: contacts
     })
   }
-  
+  deleteCity = (e) => {
+
+  } 
+   
   goBack = (e) => {
     const { history, loggedInUser } = this.props
     history.push(`/${loggedInUser.username}`)
@@ -58,6 +60,7 @@ const contacts = contactsArr.data.filter((thing, index, self) =>
       })}  
       </ul>
       <hr />
+      <button onClick={this.deleteCity}>remove {city} from list</button>
       <button onClick={this.goBack}>go back</button>
       </>
     )

@@ -2,17 +2,17 @@ import "./App.css";
 import "./index.css";
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar"
 import { loggedin } from "./api";
-// import { getAllCities } from "./api";
-import Main from "./components/Main"; //city search, city list, contact, user profile
-import MyContacts from "./components/MyContacts"; // contacts page
+import AddContact from "./components/AddContact";
+import About from "./components/About";
 import City from "./components/City";
 import CityConnections from "./components/CityConnections";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
 import EditProfile from "./components/EditProfile";
-import AddContact from "./components/AddContact";
+import Login from "./components/Login";
+import Main from "./components/Main"; //city search, city list, contact, user profile
+import MyContacts from "./components/MyContacts"; // contacts page
+import Navbar from "./components/Navbar"
+import Signup from "./components/Signup";
 
 class App extends React.Component {
   state = {
@@ -54,7 +54,8 @@ class App extends React.Component {
               return <Login {...props} 
                 setCurrentUser={this.setCurrentUser} 
                 loggedInUser={loggedInUser}/>}
-              }/>          
+              }/>
+          <Route exact path="/about" component={About} />
           <Route exact path="/mycontacts" render={(props) => {
               return <MyContacts {...props}  
                 loggedInUser={loggedInUser}/>

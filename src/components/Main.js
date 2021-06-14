@@ -26,14 +26,13 @@ class Main extends React.Component {
     return loggedInUser && (
       <div className="main-layout">
         <Search 
-        userID={loggedInUser._id} 
-        loggedInUser={loggedInUser}
-        className="searchbar" />
+          userID={loggedInUser._id} 
+          loggedInUser={loggedInUser}
+          className="searchbar" />
         <ListedCities />
         <NavLink to="/editprofile">
           <button>edit</button>
         </NavLink>
-
       </div>
     )
   }

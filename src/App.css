@@ -8,22 +8,25 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+
+
   h2 {
     color:rgb(211, 211, 175);
     font-family: Hack;
     margin-left: 1rem;
   }
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(77, 77, 77);
-  font-family: lcd phone;
+  color: rgb(172, 172, 172);
   font-size: 1rem;
+  font-family: hack;
   opacity: 1; /* Firefox */
 }
 
   input {
     margin-top: 2rem;
     width: 80%;
-    height: 3rem;
+    height: 2rem;
     border-radius: 1rem;
     border: 1px solid rgb(179, 214, 186);
     text-align: center;
@@ -31,21 +34,16 @@
     margin-bottom: 1rem;
     font-size:larger
   }
-.marquee-txt {
-  font-family: alarm clock;
-  color:rgb(121, 255, 94);
-  margin-top: 10px;
-}
-
   ul {
     list-style-type: none;
     margin-left: 0.5rem;
   }
 
   li {
-    margin-bottom: 2rem;
-    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
   }
+
   .etc-buttons {
     display: flex;
     flex-direction: row;
@@ -53,7 +51,7 @@
 
   }
 .logo-txt{
-  font-family: lcd phone;
+  font-family: hack;
 }
 .nav-bar-user {
   color:rgb(119, 119, 119);
@@ -78,6 +76,7 @@
 .img-contacts {
   margin-top: 1.3rem;
 }
+
 .loggedin-navbar {
   display: flex;
   flex-direction: row;
@@ -124,11 +123,11 @@ button {
   flex-direction: row;
   justify-content: space-between;
 }
-
+.parent-logout-nav {
+  text-align: center;
+}
 .loggedout-navbar{
   padding: 20px;
-  border-radius: 2vh;
-  margin-top: 30%;
   display: flex;
   flex-direction: row;
   max-width: 80%;
@@ -137,17 +136,37 @@ button {
   margin-left: auto;
   margin-right: auto;
 }
+
+.econtacts {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.econtacts-lnk {
+  text-decoration: none;
+  margin-top: 1rem;
+  color: #97cf43 !important;
+}
 .logsign-txt {
-  font-family: lcd phone;
   color:rgb(134, 172, 159);
-  font-size: larger;
 }
 .loggedout-link {
-  font-family: 'lcd phone';
   text-decoration: none;
   color: rgb(84, 155, 99) !important;
 }
-
+.about-text {
+  padding: 1rem;
+  font-size: 12px;
+  text-align: center;
+  font-family: hack;
+  color:rgb(44, 192, 81)
+}
+.disclaimer {
+  color: rgb(196, 120, 189);
+}
 .signup-btn{
   margin-top: 0.5rem;
   background-color: transparent;
@@ -155,18 +174,18 @@ button {
 }
 
 .form-layout {
-  padding: 20px;
-  max-width: 80%;
+  padding: 10px;
+  max-width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
-  .form-div{
+.form-div{
     margin: auto;
     display: flex;
     flex-direction: column;
   
   }
-  .forms{
+.forms{
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;;

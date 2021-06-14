@@ -16,8 +16,9 @@ export const listedcities = () => {
   {withCredentials: true})
 }
 
-export const deleteCity = () => {
-  return axios.get(`${baseUrl}/deletecity`)
+export const deleteCity = (city) => {
+  return axios.get(`${baseUrl}/delete/:city`, 
+  {withCredentials: true})
 }
 
 /* Contacts */

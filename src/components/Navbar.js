@@ -1,5 +1,4 @@
 import React from "react";
-import Marquee from "./Marquee";
 import { NavLink } from "react-router-dom";
 import { logout } from "../api";
 import imgLogout from "../logout2.png";
@@ -41,9 +40,25 @@ function Navbar({ loggedInUser, setCurrentUser }){
       </section>
       </div>
     ) : (
-    <div>
-          <Marquee />
-        <div className="loggedout-navbar">
+    <div className="parent-logout-nav">
+        <div className="econtacts">
+          <img src={pagerLogo}
+            alt="pager-logo"
+            style={{
+              maxWidth: "100px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}/>
+          <NavLink
+            className="econtacts-lnk"
+            style={{
+              marginLeft: "1rem",
+              textDecoration: "none"
+            }}
+            exact to="/"
+          >e-contacts</NavLink>
+        </div>
+                <div className="loggedout-navbar">
             <NavLink 
             className="logged-out-link" 
             style={{
@@ -52,22 +67,22 @@ function Navbar({ loggedInUser, setCurrentUser }){
               exact to="/signup">
               <p className="logsign-txt">signup</p>
             </NavLink>
-
-        <img src={pagerLogo}
-            alt="pager-logo"
-            style={{
-              maxWidth: "100px",
-              margin: "auto"
-            }}/>
-
             <NavLink 
+            className="logged-out-link" 
+            style={{
+              textDecoration:"none",
+
+            }}
+              exact to="/about">
+              <p className="logsign-txt">about</p>
+            </NavLink>
+        <NavLink 
               className="logged-out-link" 
               style={{
               textDecoration:"none",
             }}
               exact to="/login">
               <p className="logsign-txt">login</p>
-
             </NavLink>
         </div>
       </div>
