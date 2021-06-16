@@ -53,7 +53,7 @@ class Login extends React.Component {
                   <img src={imgLogin} 
                   alt="logout"
                   style={{
-                    maxWidth:"30px"
+                    maxWidth:"15%"
                   }}/>
           </button>
         </form>

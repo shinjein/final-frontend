@@ -96,7 +96,7 @@ class Signup extends React.Component {
             <img src={imgLogin} 
             alt="signup-btn"
             style={{
-              maxWidth: "30px"
+              maxWidth: "8%"
             }}/>
           </button>
         </form>

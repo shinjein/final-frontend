@@ -1,9 +1,14 @@
-pre, code { font-family: Hack, monospace; }
-
+/* pre, code { font-family: An, monospace; } */
+  @font-face {
+    font-family: 'Andale Mono Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Andale Mono Regular'), url('fonts/ANDALEMO.woff') format('woff');
+    }
 .app{
     width: 414px;
     height: 800px; 
-    font-family: hack, CameronSans Light, sans-serif;
+    font-family: Andale Mono Regular, CameronSans Light, sans-serif;
         border: 1px dotted lightskyblue;
     font-size: 20px;
     margin-left: auto;
@@ -12,20 +17,18 @@ pre, code { font-family: Hack, monospace; }
 
   h2 {
     color:rgb(211, 211, 175);
-    font-family: Hack;
+    font-family: 'Andale Mono Regular';
     margin-left: 1rem;
   }
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(172, 172, 172);
+  color: rgba(106, 163, 91, 0.582);
   font-size: 1rem;
-  font-family: hack;
   opacity: 1; /* Firefox */
 }
 
   input {
     height: 2rem;
     width: 100%;
-    border-radius: 1rem;
     border: 1px solid rgb(179, 214, 186);
     text-align: center;
     margin: auto;
@@ -91,7 +94,7 @@ a.nav-user:hover{
   
 }
 .main-layout{
-  font-family: Helvetica;
+  font-family: Andale Mono Regular;
   font-weight: lighter;
   height: 30rem;
   
@@ -130,7 +133,7 @@ button {
   text-align: center;
 }
 .loggedout-navbar{
-  padding: 20px;
+  padding-top: 10px;
   display: flex;
   flex-direction: row;
   max-width: 80%;
@@ -161,14 +164,18 @@ button {
   color: rgb(84, 155, 99) !important;
 }
 .about-text {
+  margin-left: 1rem;
+  margin-right: 1rem;
   padding: 1rem;
   font-size: 12px;
   text-align: center;
-  font-family: hack;
-  color:rgb(243, 129, 209)
+  color:rgb(243, 92, 198)
 }
 .disclaimer {
-  color: rgb(141, 50, 132);
+  margin-top: 1rem;
+  padding: 1rem;
+  color: #76a82c;
+  border: #c9f18b 0.5px solid;
 }
 .signup-btn{
   margin-top: 0.5rem;

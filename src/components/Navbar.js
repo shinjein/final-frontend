@@ -51,9 +51,8 @@ function Navbar({ loggedInUser, setCurrentUser }){
           <img src={pagerLogo}
             alt="pager-logo"
             style={{
-              maxWidth: "100px",
-              marginLeft: "auto",
-              marginRight: "auto",
+              maxWidth: "15%",
+              margin: "auto"
             }}/>
           <NavLink
             className="econtacts-lnk"
