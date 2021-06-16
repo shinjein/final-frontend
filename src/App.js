@@ -7,7 +7,7 @@ import AddContact from "./components/AddContact";
 import About from "./components/About";
 import City from "./components/City";
 import CityConnections from "./components/CityConnections";
-import EditProfile from "./components/EditProfile";
+import UserProfile from "./components/UserProfile";
 import Login from "./components/Login";
 import Main from "./components/Main"; //city search, city list, contact, user profile
 import MyContacts from "./components/MyContacts"; // contacts page
@@ -34,9 +34,6 @@ class App extends React.Component {
     });
   };
 
-  // getAllCities = async () => {
-  //   const getCities 
-  // }
   render() {
     const { loggedInUser } = this.state;
     return (
@@ -60,8 +57,8 @@ class App extends React.Component {
               return <MyContacts {...props}  
                 loggedInUser={loggedInUser}/>
             }}/>
-          <Route exact path="/editprofile" render={(props) => {
-              return <EditProfile {...props}  
+          <Route exact path="/profile" render={(props) => {
+              return <UserProfile {...props}  
                 loggedInUser={loggedInUser}/>
             }}/>
           <Route exact path="/c/:city" render={(props) => {

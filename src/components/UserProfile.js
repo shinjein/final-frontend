@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-class EditProfile extends React.Component {
+class UserProfile extends React.Component {
 
   goBack = (e) => {
     const { history, loggedInUser } = this.props
@@ -12,7 +12,7 @@ class EditProfile extends React.Component {
     const { loggedInUser } = this.props
     return loggedInUser && (
       <div className="main-layout">
-        <h2>Edit Profile</h2>
+        <h2>User Profile</h2>
           <h5>👤 : @{loggedInUser.username}</h5> 
           <h5>📍 : {loggedInUser.base}</h5>
           <h5>📪 : {loggedInUser.email}</h5>
@@ -39,4 +39,4 @@ class EditProfile extends React.Component {
   }
 }
 
-export default EditProfile;
+export default UserProfile;

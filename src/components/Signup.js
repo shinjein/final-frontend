@@ -2,19 +2,50 @@ import React from "react";
 import imgLogin from "../login.png";
 import { NavLink } from "react-router-dom";
 import { signup } from "../api";
+import Script from 'react-load-script';
+import { withRouter } from "react-router-dom"
 
 class Signup extends React.Component {
   state = {
     username: "",
     password: "",
     email:"",
-    base: ""
+    base: "",
+    query: ""
   };
 
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+
+  handleScriptLoad = () => { 
+  const options = { types: ['(cities)'] }; 
+
+
+  /*global google*/
+  this.autocomplete = new google.maps.places.Autocomplete(
+                        document.getElementById('autocomplete'),
+                        options );
+
+  this.autocomplete.setFields(['address_components', 'formatted_address']);
+  this.autocomplete.addListener('place_changed', this.handlePlaceSelect); 
+  }
+
+  handlePlaceSelect = () => {
+    const addressObject = this.autocomplete.getPlace();
+    const address = addressObject.address_components;
+
+    if (address) {
+      this.setState(
+        {
+          base: address[0].long_name,
+          query: addressObject.formatted_address,
+        }
+      );
+    }
+  }
+
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -27,6 +58,10 @@ class Signup extends React.Component {
     const { username, password, email, base } = this.state;
     return (
       <div className="form-div">
+        <Script 
+        url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM9W3PuAbtNUZMy_D1J2BDxrZXXON_sCc&libraries=places"          
+        onLoad={this.handleScriptLoad}        
+        />
         <form onSubmit={this.handleFormSubmit} className="forms">
           <input
             placeholder="username"
@@ -50,7 +85,8 @@ class Signup extends React.Component {
             onChange={this.handleChange}
           />
           <input
-          placeholder="base city"
+            id="autocomplete" 
+            placeholder="base city"
             type="text"
             name="base"
             value={base}

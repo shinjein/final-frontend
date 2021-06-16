@@ -27,8 +27,9 @@ class Login extends React.Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div className="form-layout">
-        <form onSubmit={this.handleFormSubmit} 
+      <div className="form-div">
+        <form
+        onSubmit={this.handleFormSubmit} 
         className="forms">
           <input
             placeholder="username"

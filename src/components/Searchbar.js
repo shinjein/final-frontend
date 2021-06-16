@@ -57,8 +57,11 @@ class Search extends React.Component {
         onLoad={this.handleScriptLoad}        
         />
       <div className="search-bar">
-        <SearchBar  id="autocomplete" placeholder="search city" hintText="Search City" value={this.state.query}
-          style={{
+        <SearchBar  id="autocomplete" 
+        placeholder="search city" 
+        hintText="Search City" 
+        value={this.state.query}
+        style={{
             margin: '0.5rem',
             width: '300px',
             maxHeight: '45px',

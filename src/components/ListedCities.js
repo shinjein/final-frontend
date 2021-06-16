@@ -16,7 +16,6 @@ class ListedCities extends React.Component {
     })
   }
 
-
   componentDidMount() {
     this.listUserCities();
   }
@@ -25,7 +24,7 @@ class ListedCities extends React.Component {
     return(
       <>
       <div className="main-layout">
-        <h2>Cities >></h2>
+        <h2>Searched Cities</h2>
         <hr/>
         <ul>
        {this.state.cities.map((city, index) => {

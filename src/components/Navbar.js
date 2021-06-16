@@ -17,8 +17,14 @@ function Navbar({ loggedInUser, setCurrentUser }){
     return loggedInUser ? (
       <div className="loggedin-navbar">
       <section className="nav-bar-user">
-        <p className="p-user">@  &nbsp;{loggedInUser.username}&nbsp;</p>
-        <p className="p-user">☖&nbsp;&nbsp;{loggedInUser.base}</p>
+        <NavLink to="/profile"
+         className="nav-user username"
+         style={{
+           textDecoration:"none",
+         }}>
+           @  &nbsp;{loggedInUser.username}&nbsp;
+         </NavLink>
+        <p className="nav-user">☖&nbsp;&nbsp;{loggedInUser.base}</p>
       </section>
       <section className="navbar-links">
         <NavLink to="/mycontacts" 
