@@ -1,3 +1,4 @@
+pre, code { font-family: Hack, monospace; }
 
 .app{
     width: 414px;
@@ -8,8 +9,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-
 
   h2 {
     color:rgb(211, 211, 175);
@@ -166,10 +165,10 @@ button {
   font-size: 12px;
   text-align: center;
   font-family: hack;
-  color:rgb(44, 192, 81)
+  color:rgb(243, 129, 209)
 }
 .disclaimer {
-  color: rgb(196, 120, 189);
+  color: rgb(141, 50, 132);
 }
 .signup-btn{
   margin-top: 0.5rem;
