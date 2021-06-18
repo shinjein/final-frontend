@@ -47,48 +47,36 @@ function Navbar({ loggedInUser, setCurrentUser }){
       </div>
     ) : (
     <div className="parent-logout-nav">
-        <div className="econtacts">
-          <img src={pagerLogo}
-            alt="pager-logo"
-            style={{
-              maxWidth: "15%",
-              margin: "auto"
-            }}/>
+      <div className="econtacts">
+        <img src={pagerLogo}
+          className="e-logo-img"
+          alt="pager-logo"/>
           <NavLink
             className="econtacts-lnk"
-            style={{
-              marginLeft: "1rem",
-              textDecoration: "none"
-            }}
-            exact to="/"
-          >e-contacts</NavLink>
+            exact to="/">
+            e-contacts
+          </NavLink>
         </div>
-                <div className="loggedout-navbar">
-            <NavLink 
-            className="logged-out-link" 
-            style={{
-              textDecoration:"none"
-            }}
-              exact to="/signup">
-              <p className="logsign-txt">signup</p>
-            </NavLink>
-            <NavLink 
-            className="logged-out-link" 
-            style={{
-              textDecoration:"none",
-
-            }}
-              exact to="/about">
-              <p className="logsign-txt">about</p>
-            </NavLink>
-        <NavLink 
-              className="logged-out-link" 
-              style={{
-              textDecoration:"none",
-            }}
-              exact to="/login">
-              <p className="logsign-txt">login</p>
-            </NavLink>
+        <div className="loggedout-navbar">
+          <NavLink
+            exact to="/signup"
+            className="loggedout-link"
+            activeClassName="underline"
+          >
+            signup
+          </NavLink>
+          <NavLink
+            exact to="/about"
+            className="loggedout-link" 
+            activeClassName="underline">
+              about
+          </NavLink>
+          <NavLink 
+            exact to="/login"
+            className="loggedout-link"
+            activeClassName="underline">
+              login
+          </NavLink>
         </div>
       </div>
   );

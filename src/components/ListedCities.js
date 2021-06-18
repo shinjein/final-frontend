@@ -23,8 +23,10 @@ class ListedCities extends React.Component {
   render() {
     return(
       <>
-      <div className="main-layout">
-        <h2>Searched Cities</h2>
+      <div className="list-header">
+        <h3>Searched Cities</h3>
+      </div>
+      <div className="list-body">
         <hr/>
         <ul>
        {this.state.cities.map((city, index) => {
@@ -35,9 +37,8 @@ class ListedCities extends React.Component {
               textDecoration: "none"
             }}
             activeStyle={{
-
             }}>
-              <li key={index}>{city}</li>
+              <li key={index}> {city} </li>
             </NavLink>
           )
       })} 

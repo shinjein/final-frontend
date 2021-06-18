@@ -45,15 +45,14 @@ class Login extends React.Component {
             value={password}
             onChange={this.handleChange}
           />
-          <button className="form-btn"
+          <button className="signin-btn"
           style={{
-            backgroundColor:"white",
             border:"none"
           }}>
-                  <img src={imgLogin} 
-                  alt="logout"
-                  style={{
-                    maxWidth:"15%"
+            <img src={imgLogin} 
+              alt="logout"
+              style={{
+              maxWidth:"10%"
                   }}/>
           </button>
         </form>

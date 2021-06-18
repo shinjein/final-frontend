@@ -92,7 +92,7 @@ class Signup extends React.Component {
             value={base}
             onChange={this.handleChange}
           />
-          <button className="signup-btn">
+          <button className="signin-btn">
             <img src={imgLogin} 
             alt="signup-btn"
             style={{
