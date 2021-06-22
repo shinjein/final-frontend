@@ -27,20 +27,13 @@ function Navbar({ loggedInUser, setCurrentUser }){
         <p className="nav-user">☖&nbsp;&nbsp;{loggedInUser.base}</p>
       </section>
       <section className="navbar-links">
-        <NavLink to="/mycontacts" 
-          activeStyle={{color: "orange"}}>
+        <NavLink to="/mycontacts" >
              <img src={imgContacts} alt="contax"
-             className="img-contacts"
-             style={{
-               maxWidth:"35px"
-             }} /> 
+             className="img-contacts" /> 
         </NavLink>
         <NavLink to="/" >
           <button onClick={logoutUser} className="logout-btn">
-             <img src={imgLogout} alt="logout" style={{
-               maxWidth:"35px",
-               padding: "0px",
-             }}/>
+             <img src={imgLogout} alt="logout" className="logout-btn-img"/>
           </button>
         </NavLink>
       </section>
@@ -51,28 +44,24 @@ function Navbar({ loggedInUser, setCurrentUser }){
         <img src={pagerLogo}
           className="e-logo-img"
           alt="pager-logo"/>
-          <NavLink
-            className="econtacts-lnk"
+          <NavLink className="econtacts-lnk"
             exact to="/">
             e-contacts
           </NavLink>
         </div>
         <div className="loggedout-navbar">
-          <NavLink
-            exact to="/signup"
+          <NavLink exact to="/signup"
             className="loggedout-link"
             activeClassName="underline"
           >
             signup
           </NavLink>
-          <NavLink
-            exact to="/about"
+          <NavLink exact to="/about"
             className="loggedout-link" 
             activeClassName="underline">
               about
           </NavLink>
-          <NavLink 
-            exact to="/login"
+          <NavLink exact to="/login"
             className="loggedout-link"
             activeClassName="underline">
               login

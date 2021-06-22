@@ -1,11 +1,12 @@
+import React from "react";
 import "./App.css";
 import "./index.css";
-import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom";
 import { loggedin } from "./api";
 import AddContact from "./components/AddContact";
 import About from "./components/About";
-import City from "./components/City";
+import CityContacts from "./components/CityContacts";
 import CityConnections from "./components/CityConnections";
 import UserProfile from "./components/UserProfile";
 import Login from "./components/Login";
@@ -62,7 +63,7 @@ class App extends React.Component {
                 loggedInUser={loggedInUser}/>
             }}/>
           <Route exact path="/c/:city" render={(props) => {
-              return <City {...props}  
+              return <CityContacts {...props}  
                 loggedInUser={loggedInUser}/>
             }}/>
           <Route exact path="/c/:city/:contact" render={(props) => {

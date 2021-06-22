@@ -63,28 +63,28 @@ class Signup extends React.Component {
         onLoad={this.handleScriptLoad}        
         />
         <form onSubmit={this.handleFormSubmit} className="forms">
-          <input
+          <input className="input"
             placeholder="username"
             type="text"
             name="username"
             value={username}
             onChange={this.handleChange}
           />
-          <input
+          <input className="input"
             placeholder="e-mail"
             type="email"
             name="email"
             value={email}
             onChange={this.handleChange}
           />
-          <input
+          <input className="input"
             placeholder="password"
             type="password"
             name="password"
             value={password}
             onChange={this.handleChange}
           />
-          <input
+          <input className="input"
             id="autocomplete" 
             placeholder="base city"
             type="text"
