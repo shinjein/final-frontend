@@ -12,7 +12,6 @@ state = {
     };
 
   handleDeleteCity = async (event) => {
-    event.preventDefault();
     const { city } = this.state;
     await deleteCity(city);
     this.setState({
