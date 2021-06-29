@@ -22,9 +22,10 @@ class CityConnections extends React.Component {
     const { city, connections, contact } = this.state
     return (
       <div className="main-layout">
-        <h2>{city}</h2>
         <hr/>
-        <h3> &nbsp;>>>{contact}</h3>
+        <h4>@{contact}'s contacts in: </h4>
+          <h3>{city}</h3>
+        <hr/>
         <section>
           <ul>
        {this.state.connections.map((user, index) => {

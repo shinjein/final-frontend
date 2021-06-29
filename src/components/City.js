@@ -1,6 +1,5 @@
 import React from "react";
 import { citycontacts } from "../api"
-import { NavLink } from "react-router-dom";
 import Search from "./Searchbar";
 import CityContacts from "./CityContacts";
 
@@ -21,7 +20,6 @@ class City extends React.Component {
       contacts: contacts
     })
   }
-
 
   render() {
     const { loggedInUser } = this.props;

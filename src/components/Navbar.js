@@ -47,7 +47,7 @@ function Navbar({ loggedInUser, setCurrentUser }){
           <NavLink className="econtacts-lnk"
             exact to="/">
             e-contacts
-          </NavLink>
+          </NavLink> 
         </div>
         <div className="loggedout-navbar">
           <NavLink exact to="/signup"

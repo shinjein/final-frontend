@@ -44,7 +44,7 @@ class Search extends React.Component {
     const { history, userID } = this.props
     await createcitylist(city, userID);
     await searchedCities(city, userID);
-    history.push(`/c/${city}`);
+    history.push(`/c/${city}/details`);
     console.log(`${city} added to ${user}'s city search list`);
   }
 

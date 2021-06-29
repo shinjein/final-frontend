@@ -1,9 +1,7 @@
 import React from "react";
 import imgLogin from "../login.png";
-import { NavLink } from "react-router-dom";
 import { signup } from "../api";
 import Script from 'react-load-script';
-import { withRouter } from "react-router-dom"
 
 class Signup extends React.Component {
   state = {
@@ -20,16 +18,15 @@ class Signup extends React.Component {
   };
 
   handleScriptLoad = () => { 
-  const options = { types: ['(cities)'] }; 
+    const options = { types: ['(cities)'] }; 
 
+    /*global google*/
+    this.autocomplete = new google.maps.places.Autocomplete(
+                          document.getElementById('autocomplete'),
+                          options );
 
-  /*global google*/
-  this.autocomplete = new google.maps.places.Autocomplete(
-                        document.getElementById('autocomplete'),
-                        options );
-
-  this.autocomplete.setFields(['address_components', 'formatted_address']);
-  this.autocomplete.addListener('place_changed', this.handlePlaceSelect); 
+    this.autocomplete.setFields(['address_components', 'formatted_address']);
+    this.autocomplete.addListener('place_changed', this.handlePlaceSelect); 
   }
 
   handlePlaceSelect = () => {

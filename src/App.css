@@ -1,16 +1,19 @@
 /* pre, code { font-family: An, monospace; } */
   @font-face {
     font-family: 'Andale Mono Regular';
-    font-style: normal;
-    font-weight: normal;
+    font-style: light;
     src: local('Andale Mono Regular'), url('fonts/ANDALEMO.woff') format('woff');
     }
+  @font-face {
+    font-family: 'Myriad Pro Light';
+    src: local('Myriad Pro Regular'), url('fonts/myriadpro-light-webfont.woff') format('woff');
+  }
 :root {
   --speed: 500ms;
 }
 .app{
     width: 414px;
-    background-color:rgb(244, 247, 250);
+    background-color:rgba(247, 250, 244, 0.5);
     height: 800px; 
     font-family: Andale Mono Regular, CameronSans Light, sans-serif;
         border: 1px dotted rgb(249, 253, 255);
@@ -26,15 +29,15 @@
   }
   
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(182, 216, 175);
-  font-size: 1rem;
+  color: rgb(190, 190, 190);
+  font-size: 0.8rem;
   opacity: 3; /* Firefox */
 }
 
   input {
     height: 2rem;
     width: 100%;
-    border: 0.5px solid rgb(151, 196, 161);
+    border: 0.5px solid rgb(190, 190, 190);
     text-align: center;
     margin: auto;
     padding-bottom: 0.3rem;
@@ -44,20 +47,22 @@
     margin-bottom: 1rem;
   }
 
-  ul {
-    list-style-type: none;
-    margin-left: 0.5rem;
+ul, li {
+   list-style-type: none;
+   list-style-position:inside;
+   margin:0;
+   padding:0;
   }
 
-  .ul-searched-cities{
+.ul-searched-cities{
     font-size: 25px;
     text-decoration: none;
   }
-
+/* 
   li {
     margin-bottom: 1.5rem;
     margin-top: 1rem;
-  }
+  } */
 
   .etc-buttons {
     display: flex;
@@ -69,7 +74,7 @@
   font-family: hack;
 }
 .nav-bar-user {
-  color:rgb(119, 119, 119);
+  color:rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   margin-left: 20px;
@@ -136,9 +141,8 @@ a.nav-user:hover{
 }
 
 button {
-  padding: 0.5rem;
   border-radius: 1vh;
-  border: 1px solid gray;
+  border: 1px solid rgb(190, 190, 190);
   color: gray;
   background-color: white;
 }
@@ -183,25 +187,27 @@ button {
   text-decoration: none;
   margin-top: 1rem;
   margin-left: 1rem;
-  color: #97cf43 !important;
+  color: #4ecc06 !important; 
 }
+
+/* #97cf43 */
+
 .logsign-txt {
-  color:rgb(134, 172, 159);
+  color:rgb(0, 0, 0);
+  font-weight: 200;
 }
 .loggedout-link {
   text-decoration: none;
-  color: rgb(139, 150, 141) !important;
+  color: rgb(190, 190, 190) !important;
 }
-.underline {
-  border-bottom: rgb(225, 226, 235) 2px solid;
-}
+
 .about-text {
   margin-left: 1rem;
   margin-right: 1rem;
   padding: 1rem;
   font-size: 12px;
   text-align: center;
-  color:rgb(132, 92, 243)
+  color:#395f00b0
 }
 .disclaimer {
   margin-top: 2rem;
@@ -246,7 +252,7 @@ button {
   flex-direction: row;
   align-items: baseline;
   margin: auto;
-  background-color:rgb(212, 217, 238)
+  background-color:rgb(238, 236, 212)
 }
 
 .active-city-link {
@@ -277,4 +283,8 @@ button {
 
 .p-no-contacts {
   font-size: small;
+}
+
+.city-contacts-link {
+
 }

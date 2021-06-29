@@ -35,11 +35,7 @@ render() {
     return contacts.length === 0 ? (
       <>
       <p className="p-no-contacts">you have no contacts with friends in this city...</p>
-       
        <form onSubmit={this.handleDeleteCity}>
-         <button>
-          delete
-         </button>
        </form>
       </>
     ) : (
@@ -47,10 +43,7 @@ render() {
       <ul>
      {this.state.contacts.map((contact, index) => {
           return (
-            <NavLink exact to={`/c/${city}/${contact}`}
-              style={{
-              textDecoration: "none"            
-            }}>
+            <NavLink exact to={`/c/${city}/${contact}`} className="city-contacts-link">
               <li key={index}>@ {contact}</li>
             </NavLink>
           )
